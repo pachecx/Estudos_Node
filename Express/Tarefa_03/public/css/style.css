@@ -1,0 +1,13 @@
+body{
+    background-color: #dfdfdf;
+    text-align: center;
+    padding: 2em;
+}
+
+.texto1{
+    color: red;
+}
+
+.texto2{
+    color: blue;
+}
