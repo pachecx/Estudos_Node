@@ -1,0 +1,12 @@
+<h1>Produtos</h1>
+<ol>
+    {{#each lista}}
+            
+      <li>
+        <a href="/detalhes/{{this.id}}">{{this.nome}}</a>
+      </li>
+
+    {{/each}}
+</ol>
+
+<a href="/">Voltar</a>
