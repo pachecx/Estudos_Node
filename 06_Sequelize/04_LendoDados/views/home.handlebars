@@ -1,2 +1,11 @@
-<h1>Ola sequelize</h1>
-<p>Pagina Home</p>
+<h1>Usuarios cadastrados:</h1>
+
+<div class="container">
+    {{#each users}}
+
+    <div class="item">
+        <p>{{this.name}}</p>
+
+    </div>
+    {{/each}}
+</div>

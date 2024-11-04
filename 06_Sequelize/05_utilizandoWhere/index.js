@@ -24,10 +24,9 @@ app.set("view engine", "handlebars");
 app.use(express.static("public"));
 
 app.get("/", async (req, res) => {
+  const users = await User.findAll({ raw: true });
 
-  const users = await User.findAll({raw: true})
-
-    res.render("home", { users: users});
+  res.render("home", { users: users });
 });
 
 app.get("/users/create", (req, res) => {
@@ -47,6 +46,14 @@ app.post("/users/create", async (req, res) => {
 
   res.redirect("/");
 });
+
+app.get('/users/:id', async (req, res) => {
+  const id = req.params.id 
+
+  const user = await User.findOne({raw: true, where: {id: id}})
+
+  res.render('userviews', { user })
+})
 
 conn
   .sync()
